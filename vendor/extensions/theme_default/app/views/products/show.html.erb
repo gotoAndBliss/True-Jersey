@@ -1,5 +1,4 @@
 <% @body_id = 'product-details' %>
-<h1><%= @product.name %></h1>
 
 <div id="product-images">
   <div id="main-image">
@@ -11,6 +10,7 @@
 </div>
 
 <div id="product-description">
+  <h1><%= @product.name %></h1>
   <% hook :product_description do %>
     <%= product_description(@product) rescue t("product_has_no_description") %>
   <% end %>
@@ -24,6 +24,11 @@
     <%= render 'cart_form' %>
   </div>
 <% end %>
+<div class="mini-nav">
+  <div id="size-chart-button"></div>
+  <br />
+  <div id="shipping-button"></div>
+</div>
 
 <%= render 'taxons' %>
 

@@ -13,6 +13,10 @@ class ThemeDefaultExtension < Spree::Extension
   # end
   
   def activate
+    
+    AppConfiguration.class_eval do
+      preference :logo, :string, :default => 'true-jersey-logo.png'
+    end
 
     # Add your extension tab to the admin.
     # Requires that you have defined an admin controller:

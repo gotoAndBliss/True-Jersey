@@ -1,0 +1,16 @@
+<%= javascript_include_tag :ckeditor %>
+<div id="content" class="with-sidebar clear">
+  <br />
+  
+  <% form_for(@wysiwyg, :url => admin_wysiwygs_path, :html => { :method => :post}) do |f| %>
+    <%= f.hidden_field :name, :value => params[:name] %>
+    <%= f.cktext_area(:content, :width => '100%', :height => '200px') %>
+    <%= f.submit %>
+  <% end -%>
+
+  <%= render :partial => 'sidenav' %>
+</div>
+
+
+
+

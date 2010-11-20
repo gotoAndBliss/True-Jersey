@@ -19,7 +19,6 @@
 </ul>
 <% end %>
 
-<hr class="space" />
 
 <%  if paginated_products.is_a?(WillPaginate::Collection) 
       params.delete(:search)
@@ -30,4 +29,3 @@
                     :next_label => "#{t('next')} &#187;") %>
 <%  end -%>
 
-<hr class="space" />

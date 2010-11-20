@@ -9,6 +9,13 @@ class ProductsController < Spree::BaseController
   actions :show, :index
 
   include Spree::Search
+  
+  def index
+    retrieve_products
+    respond_to do |format|
+      format.html {render :layout => 'sans_bg'}
+    end
+  end
 
   def change_image
     @product = Product.available.find_by_param(params[:id])
@@ -34,6 +41,7 @@ class ProductsController < Spree::BaseController
   end
 
   def collection
+    #TODO : the homepage touches this. use alt layout for m'heya.
     retrieve_products
   end
 end

@@ -1,4 +1,9 @@
-<h1><%= @taxon.name %></h1>
+<div class="taxon-left"></div>
+<div class="taxon-middle">
+<h1 style="color: #fff;"><%= @taxon.name %></h1>
+</div>
+<div class="taxon-right"></div>
+<div class="clear"></div>
 
 <% if @taxon.children.empty? || !params[:keywords].blank? %>
   <% hook :taxon_products do %>

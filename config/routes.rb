@@ -23,7 +23,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # map.connect '/locale/:new_locale', :controller => 'locale', :action => 'set_session_locale'
 
-  map.root :controller => "products", :action => "index"
+  map.root :controller => "newhome", :action => "index"
 
   map.resource :user_session, :member => {:nav_bar => :get}
   map.resource :account, :controller => "users"
@@ -74,6 +74,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :states
     admin.resources :tax_categories
     admin.resources :configurations
+    admin.resources :wysiwygs
     admin.resources :products, :member => {:clone => :get}, :has_many => [:product_properties, :images] do |product|
       product.resources :variants
       product.resources :option_types, :member => { :select => :get, :remove => :get}, :collection => {:available => :get, :selected => :get}

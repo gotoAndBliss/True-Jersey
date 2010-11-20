@@ -7,6 +7,12 @@ class TaxonsController < Spree::BaseController
 
   include Spree::Search
 
+  def show
+    respond_to do |format|
+      format.html {render :layout => 'sans_bg'}
+    end
+  end
+
   private
   def load_data
     @taxon ||= object

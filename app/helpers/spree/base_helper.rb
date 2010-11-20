@@ -129,6 +129,6 @@ module Spree::BaseHelper
   end
 
   def logo(image_path=Spree::Config[:logo])
-    link_to image_tag(image_path), root_path
+    link_to image_tag(image_path), root_path, :style => "float: left; margin-top: 5px;"
   end
 end

@@ -1,12 +1,10 @@
 @import "_mixins";
 
 button, a.button, input.button {
-  .rounded_corners(0.3em);
-  background: #efefef url(../images/buttons/bg-button.png) center left repeat-x !important;
+  //background: #efefef url(../images/buttons/bg-button.png) center left repeat-x !important;
   border-style: solid;
   border-width: 1px !important;
   border-color: #ddd #999 #999 #ddd !important;
-  -moz-outline-radius: .3em;
   color: #111;
   display: inline-block;
   font-family: Helvetica Neue, Helvetica, Arial, Sans-serif;
@@ -33,17 +31,15 @@ button.primary, a.button.primary, input.button.primary {
 }
 
 button:hover, a.button:hover, input.button:hover {
-  background-image: url(../images/buttons/bg-button-hover.png) !important;
+  //background-image: url(../images/buttons/bg-button-hover.png) !important;
 }
 
 button.large, a.button.large, input.button.large {
-  .rounded_corners(0.3em);
   font-size: 1.4em !important;
   line-height: 1.4em;
 }
 
 button.small, a.button.small, input.button.small {
-  .rounded_corners(4px);
   font-size: .9em;
   line-height: 1.4em;
   padding: 5px 10px;
@@ -72,4 +68,72 @@ button::-moz-focus-inner {
 
 p a.button img, p button img {
   margin: 0 5px 0 0; 
+}
+
+
+.add_to_cart {
+  background: url('/images/add-to-cart-bg.png') no-repeat;
+  height: 55px;
+  width: 168px;
+  border: none;
+  position: relative;
+  left: 5px;
+}
+.login_box{
+  background: url('/images/login-button.jpg') no-repeat;
+  width: 117px;
+  height: 32px;
+  display: block;
+}
+.logout_box{
+  background: url('/images/logout-button.jpg') no-repeat;
+  width: 117px;
+  height: 32px;
+  display: block;
+}
+.account_box{
+  background: url('/images/account-button.png') no-repeat;
+  height: 35px;
+  width: 117px;
+  display: block;
+}
+.red_button_bg{
+  background: url('/images/red-button-bg.png') repeat-x;
+  height: 42px;
+  float: left;
+}
+.red_button_bg form{
+  position: relative;
+  bottom: 13px;
+}
+.red_button_left{
+  background: url('/images/red-button-left.png') no-repeat;
+  height: 42px;
+  width: 8px;
+  float: left;
+}
+.red_button_right{
+  background: url('/images/red-button-right.png') no-repeat;
+  height: 42px;
+  width: 14px;
+  float: left;
+}
+.search_button{
+  background: none !important;
+  border: 0 !important;
+  color: #EBEFBB;
+}
+.mini-nav{
+  float: right;
+  margin-right: 25px;
+}
+#size-chart-button{
+  background: url('/images/size-chart-button.jpg') no-repeat;
+  width: 154px;
+  height: 43px;
+}
+#shipping-button{
+  background: url('/images/shipping-button.jpg') no-repeat;
+  height: 43px;
+  width: 154px;
 }

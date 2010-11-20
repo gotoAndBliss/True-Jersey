@@ -2,23 +2,32 @@
 @import "_mixins";
 
 body {
-  margin-top: 10px;
-  background: #fff url(../images/body-back.png) top left repeat-x;
+  background: url('/images/body-piece.png');
 }
 
 div.left { .rightie; }
 div.right { .leftie;  }
-a { outline: none; }
+a { outline: none; text-decoration: none; }
 
+#content-wrapper {
+  margin: 0 auto;
+  width: 960px;
+  min-height: 500px;
+}
+#content-top {
+ background: url('/images/content-top.png') no-repeat; 
+ height: 21px;
+ width: 100%;
+}
+#content-bottom{
+ background: url('/images/content-bottom.png') no-repeat; 
+ height: 34px;
+ width: 100%;
+}
 #wrapper {
-  background: transparent url(../images/wrapper-back.png) top center no-repeat;
-  padding: 25px 20px 20px;
-  position: relative;
-  }
-  body.two-col #wrapper {
-    background-image: url(../images/wrapper-back-2.png);
-  }
-
+  background: url('/images/wrappper-top.png') repeat-x;
+  width: 100%;
+}
 .container {
   width: 950px;
   margin: 0 auto;
@@ -30,29 +39,56 @@ a { outline: none; }
   .colborder;
   h3 { margin-bottom: .5em; }
 }
-
+body.one-col #content-sans-bg {
+  .column-last(24);
+  width:960px;
+  padding-left: 15px;
+}
 body.one-col #content {
   .column-last(24);
+  background:url("/images/content-piece.png") repeat-y scroll 0 0 transparent;
+  width:960px;
+  padding-left: 15px;
 }
 body.two-col #content {
   .column-last(19);
+  background:url("/images/content-piece.png") repeat-y scroll 0 0 transparent;
+  width:786px;
+  padding: 40px;
 }
 
 #header {
-  position: relative;
-  color: @medium_blue;
-  clear: both;
-  a { color: @link_color; }
-  a:hover { color: @link_hover_color; }
-
+  background: url('/images/header-piece.png') repeat-x;
+  height: 135px;
+  width: 100%;
 }
-
+#header-wrapper {
+  margin: 0 auto;
+  width: 960px;
+}
 #footer {
-  padding-top: 2em;
-  clear: both;
-  div.left { width: 45%; }
-  div.right { width: 55%; }
+  background: url('/images/footer-piece.png') repeat-x;
+  height: 78px;
+  width: 100%;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 5px;
+  margin-top: 15px;
 }
+#footer ul {
+  list-style-type: none;
+  margin: 10px 0 13px;
+}
+#footer ul li {
+  display: inline;
+  margin-right: 20px;
+}
+#footer p {
+  font-size: 12px;
+  color: white;
+}
+
 
 h1 { font-size: 2.5em; }
 
@@ -69,4 +105,90 @@ p img {
   float: left;
   margin-right: 5px;
   vertical-align: middle;
+}
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0; }
+.taxon-left{
+  height: 53px;
+  width: 10px;
+  float: left;
+  background: url('/images/taxon-left.png') no-repeat;
+}
+.taxon-right{
+  background: url('/images/taxon-right.png') no-repeat;
+  height: 53px;
+  width: 13px;
+  float: left;
+}
+.taxon-middle{
+  background: url('/images/taxon-middle.png') repeat-x;
+  height: 53px;
+  float: left;
+  min-width: 176px;
+  padding: 3px 0 0 18px;
+}
+#line_items td {
+  width: 180px;
+}
+.checkout-prog-box-top{
+  background: url('/images/prog-box-top.png') no-repeat;
+  height: 13px;
+  width: 359px;
+}
+.checkout-prog-box{
+  height:248px;
+  left:605px;
+  position:absolute;
+  top:0;
+  width:359px;
+}
+.checkout-prog-box-middle{
+  background: url('/images/prog-box-middle.png') repeat-y;
+  height: 100%;
+}
+.checkout-prog-box-bottom{
+  background: url('/images/prog-box-bottom.png') no-repeat;
+  height: 19px;
+  width: 359px;
+}
+.img-swap-bg{
+  background: url('/images/img-swap-bg.jpg') no-repeat;
+  height: 328px;
+  width: 654px;
+  float: left;
+}
+.magical-special{
+  background: url('/images/magical-special.png') no-repeat;
+  width: 297px;
+  height: 385px;
+  float: left;
+}
+.home-ban{
+  float: left;
+  margin-left: 20px;
+}
+.home-ban-top{
+  background: url('/images/home-ban-top.png') no-repeat;
+  width: 217px;
+  height: 23px;
+}
+.home-ban-middle{
+  background: url('/images/home-ban-middle.png') repeat-y;
+  width: 217px;
+  height: 320px;
+}
+.home-ban-bottom{
+  background: url('/images/home-ban-bottom.png') no-repeat;
+  width: 217px;
+  height: 19px; 
+}
+.home-ban-middle-content {
+  margin-left:18px;
+  width:190px;
 }

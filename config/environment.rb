@@ -41,6 +41,7 @@ Spree::Initializer.run do |config|
   config.gem "faker", :version => '0.3.1'
   config.gem 'paperclip', :version => '>=2.3.1.1'
 
+
   # Only load the plugins named here, in the order given. By default, all plugins
   # in vendor/plugins are loaded in alphabetical order.
   # :all can be used as a placeholder for all plugins not explicitly named
