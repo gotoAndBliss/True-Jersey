@@ -1,10 +1,6 @@
 class Admin::WysiwygsController < Admin::BaseController
   def index
   end
-
-  def edit
-    @wysiwyg = Wysiwyg.find(params[:id])
-  end
   
   def new
     if Wysiwyg.find_by_name(params[:name]) != nil
@@ -12,6 +8,10 @@ class Admin::WysiwygsController < Admin::BaseController
     else
       @wysiwyg = Wysiwyg.new(:name => params[:name])
     end
+  end
+
+  def edit
+    @wysiwyg = Wysiwyg.find(params[:id])
   end
   
   def create
@@ -25,10 +25,11 @@ class Admin::WysiwygsController < Admin::BaseController
   
   def update
     @wysiwyg = Wysiwyg.find(params[:id])
+    
     if @wysiwyg.update_attributes(params[:wysiwyg])
-      redirect_to admin_wysiwygs_path
+      redirect_to edit_admin_wysiwyg_path(@wysiwyg.id)
     else
-      render :action => 'edit'
+      redirect_to admin_wysiwygs_path
     end
   end
   
