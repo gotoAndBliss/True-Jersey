@@ -7,7 +7,11 @@ class Admin::ImagesController < Admin::BaseController
   end
 
 	create.response do |wants|
-		wants.html {redirect_to admin_product_images_url(@product)}
+	  if @product == nil
+	    wants.html {redirect_to admin_image_rotator_path}
+    else
+		  wants.html {redirect_to admin_product_images_url(@product)}
+	  end
   end
 
 	update.response do |wants|
@@ -27,11 +31,13 @@ class Admin::ImagesController < Admin::BaseController
   private
 
   def load_data
-		@product = Product.find_by_permalink(params[:product_id])
-		@variants = @product.variants.collect do |variant| 
-			[variant.options_text, variant.id ]
-		end
-		@variants.insert(0, [I18n.t("all"), "All"])
+    if params[:product_id] != nil
+		  @product = Product.find_by_permalink(params[:product_id])
+		  @variants = @product.variants.collect do |variant| 
+			  [variant.options_text, variant.id ]
+		  end
+		  @variants.insert(0, [I18n.t("all"), "All"])
+	  end
   end
 
   def create_before
@@ -44,8 +50,12 @@ class Admin::ImagesController < Admin::BaseController
 				object.viewable_id = params[:image][:viewable_id]
 			end
 		else
-			object.viewable_type = 'Product'
-			object.viewable_id = @product.id
+		  if params[:image][:viewable_type] == "homepage"
+		    return true
+	    else
+  			object.viewable_type = 'Product'
+  			object.viewable_id = @product.id
+			end
 		end
 	end
 	

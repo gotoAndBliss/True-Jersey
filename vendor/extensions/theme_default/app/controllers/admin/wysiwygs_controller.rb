@@ -33,6 +33,11 @@ class Admin::WysiwygsController < Admin::BaseController
     end
   end
   
+  def image_rotator
+    @images = Image.all.select{|i|i.viewable_type == "homepage"}
+    @image = Image.new
+  end
+  
 end
 
 

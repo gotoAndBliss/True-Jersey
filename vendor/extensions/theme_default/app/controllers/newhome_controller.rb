@@ -1,5 +1,7 @@
 class NewhomeController < ApplicationController
   def index
+    @images = Image.all.select{|i|i.viewable_type == "homepage"}
+    
     render :layout => "sans_bg"
   end
   

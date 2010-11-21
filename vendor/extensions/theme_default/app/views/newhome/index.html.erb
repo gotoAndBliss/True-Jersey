@@ -1,6 +1,9 @@
 <div class="magical-special">
 </div>
 <div class="img-swap-bg">
+  <div class="rotator">
+    <%= image_tag @images[rand(@images.length)].attachment.url(:homepage) %>
+  </div>
 </div>
 <div class="clear"></div>
 

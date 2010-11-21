@@ -1,0 +1,24 @@
+<%= javascript_include_tag :ckeditor %>
+<div id="content" class="with-sidebar clear">
+<h3>Random Images on Homepage</h3>
+
+<h5>Upload a new image</h5>
+<% form_for(:image, :url => { :controller => 'images', :action => 'create' }, :html => { :multipart => true }) do |form| %>
+    <%= form.hidden_field :viewable_type, :value => "homepage" %>
+    <%= form.file_field :attachment %>
+    <%= form.submit %>
+<% end %>
+<br />
+
+<h5>Uploaded Files</h5>
+<%- for image in @images %>
+  <%= image.attachment_file_name %>
+<% end %>
+
+
+  <%= render :partial => 'sidenav' %>
+</div>
+
+
+
+

@@ -78,6 +78,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :states
     admin.resources :tax_categories
     admin.resources :configurations
+    admin.image_rotator '/image_rotator', :controller => 'wysiwygs', :action => 'image_rotator'
     admin.resources :wysiwygs
     admin.resources :products, :member => {:clone => :get}, :has_many => [:product_properties, :images] do |product|
       product.resources :variants
