@@ -14,4 +14,13 @@ class NewhomeController < ApplicationController
   def about
   end
 
+  def size_charts
+  end
+  
+  def shipping
+  end
+
+  def contact
+  end
+
 end

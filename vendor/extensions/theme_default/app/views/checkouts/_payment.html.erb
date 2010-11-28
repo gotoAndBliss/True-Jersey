@@ -7,7 +7,7 @@
       <h3><%= t("secure_creditcard") %></h3>
 
       <%= image_tag "creditcard.gif", :id => 'creditcard-image' %>
-      <hr class="space" />
+      <br />
       <p class="field">
         <label for=""><%= t("card_number") %></label><br />
       <%= creditcard_form.text_field :number, :size=> 19, :max_length => 19, :class => 'required' -%><span class="req">*</span>

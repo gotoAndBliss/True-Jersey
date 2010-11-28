@@ -28,6 +28,9 @@ ActionController::Routing::Routes.draw do |map|
   map.storeloc 'storeloc', :controller => 'newhome', :action => 'storeloc'
   map.faq 'faq', :controller => 'newhome', :action => 'faq'
   map.about 'about', :controller => 'newhome', :action => 'about'
+  map.size_charts 'size_charts', :controller => 'newhome', :action => 'size_charts'
+  map.shipping 'shipping', :controller => 'newhome', :action => 'shipping'
+  #map.contact 'contact', :controller => 'newhome', :action => 'contact'
 
   map.resource :user_session, :member => {:nav_bar => :get}
   map.resource :account, :controller => "users"
