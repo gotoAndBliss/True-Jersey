@@ -4,6 +4,11 @@
 # Code is not reloaded between requests
 config.cache_classes = true
 
+config.after_initialize do
+  EnginesHelper.autoload_assets = false
+end
+
+
 # Use a different logger for distributed setups
 # config.logger = SyslogLogger.new
 
