@@ -10,7 +10,11 @@ SPREE_GEM_VERSION = '0.9.99' unless defined? SPREE_GEM_VERSION
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
+
 Spree::Initializer.run do |config|
+  
+  
+  
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
@@ -81,6 +85,7 @@ end
 Time::DATE_FORMATS[:date_time24] = "%Y-%m-%d %H:%M"
 Time::DATE_FORMATS[:short_date] = "%Y-%m-%d"
 
+
 # Add new inflection rules using the following format
 # (all these examples are active by default):
 # Inflector.inflections do |inflect|
@@ -95,4 +100,3 @@ Time::DATE_FORMATS[:short_date] = "%Y-%m-%d"
 # Mime::Type.register "application/x-mobile", :mobile
 
 # Include your application configuration below
-

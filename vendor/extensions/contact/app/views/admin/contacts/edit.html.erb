@@ -1,0 +1,21 @@
+<h1>
+  Edit Contact
+</h1>
+
+<%- form_for @contact, :url => "/admin/contacts/#{@contact.id}") do |f| %>
+  <%= f.error_messages %>
+
+    <%= f.text_field :name, :input_html => { :size => 60 } %>
+    <br />
+    <%= f.text_field :email, :input_html => { :size => 60 } %>
+    <br />
+    <%= f.select :state_id, ["Regarding an existing order", "Comments and suggestions", "Questions and Requests", "Wholesale Information", "Other"] %>
+    <br />
+    <%= f.text_area :message, %>
+    <br />
+    <%= f.submit "Update" %>
+<% end %>
+<p>
+  or
+  <%= link_to "Cancel", admin_contacts_path %>
+</p>

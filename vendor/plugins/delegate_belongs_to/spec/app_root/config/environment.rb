@@ -1,6 +1,7 @@
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
+  
   config.cache_classes = false
   config.whiny_nils = true
   config.plugin_locators.unshift(

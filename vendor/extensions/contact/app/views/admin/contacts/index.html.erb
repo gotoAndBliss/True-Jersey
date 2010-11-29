@@ -1,0 +1,44 @@
+<h1>
+  <%= Spree::Config[:site_name] %>
+  Contacts
+</h1>
+
+<%= will_paginate @contacts %>
+
+    
+<table class='table'>
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Email
+    </th>
+    <th>
+      Subject
+    </th>
+    <th>
+      Options
+    </th>
+  </tr>
+  <%- @contacts.each do |contact| %>
+    <tr>
+      <td>
+        <%=h contact.name %>
+      </td>
+      <td>
+        <%=h contact.email %>
+      </td>
+      <td>
+        <%=h contact.state_id %>
+      </td>
+      <td>
+        <%= link_to 'Edit', edit_admin_contact_path(contact) %>
+        |
+        <%= link_to 'Destroy', "/admin/contacts/#{contact.id}", :confirm => 'Are you sure?', :method => :delete %>
+      </td>
+      <br />
+    </tr>
+  <% end %>
+</table>
+<%= will_paginate @contacts %>

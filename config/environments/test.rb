@@ -4,6 +4,7 @@
 # test suite.  You never need to work with it otherwise.  Remember that
 # your test database is "scratch space" for the test suite and is wiped
 # and recreated between test runs.  Don't rely on the data there!
+
 config.cache_classes = true
 
 # Log error messages when you accidentally call methods on nil.
@@ -16,7 +17,7 @@ config.action_controller.perform_caching             = false
 # Tell ActionMailer not to deliver emails to the real world.
 # The :test delivery method accumulates sent emails in the
 # ActionMailer::Base.deliveries array.
-config.action_mailer.delivery_method = :test
+# config.action_mailer.delivery_method = :test
 
 # prevents rails 2.1 from complaining about protect_from_forgery while running rspec tests
 config.action_controller.allow_forgery_protection = false
