@@ -1,1 +1,0 @@
-/Users/macuser/Sites/test/spree/public/javascripts/ckcustom.js
