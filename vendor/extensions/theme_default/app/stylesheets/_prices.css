@@ -1,0 +1,22 @@
+.prices { font-weight: bold; }
+.prices #product-details .prices { font-size: 1.25em; }
+.price.selling {
+  color: #666666;
+  padding-top: 4px;
+}
+#product-details .price.selling {
+  font-size: 1.5em;
+  color: #666666;
+}
+.price.diff {
+  font-style: italic;
+  font-weight: normal;
+  color: #666666;
+}
+#cart-form {
+  display: inline;
+  float: left;
+  text-align: right;
+  width: 223px !important;
+}
+#cart-form form input { font-size: 18px; }
