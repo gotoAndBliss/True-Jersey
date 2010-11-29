@@ -5,18 +5,6 @@
 # every request.  This slows down response time but is perfect for development
 # since you don't have to restart the webserver when you make code changes.
 
-config.action_mailer.delivery_method = :smtp
-config.action_mailer.smtp_settings = {
-   :tls => true,
-   :address => "smtp.gmail.com",
-   :port => "587",
-   :authentication => :plain,
-   :domain => "truejersey.com",
-   :user_name => "daniel.levine4",
-   :password => "krishna108" 
- }
-
-
 config.cache_classes = false
 
 # Log error messages when you accidentally call methods on nil.

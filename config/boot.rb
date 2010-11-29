@@ -57,6 +57,13 @@ module Spree
     def run
       load_rails("2.3.5")  # note: spree requires this specific version of rails (change at your own risk)
       load_initializer
+      
+      Rails::Initializer.class_eval do
+        def load_gems
+          @bundler_loaded ||= Bundler.require :default, Rails.env
+        end
+      end
+      
       Spree::Initializer.run(:set_load_path)
     end
     
