@@ -1,1 +1,1 @@
-/Users/macuser/Sites/test/spree/public/javascripts/ckcustom.js
+/home/shadyfront/webapps/rails/spree/public/javascripts/ckcustom.js
