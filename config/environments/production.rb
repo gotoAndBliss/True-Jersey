@@ -4,6 +4,7 @@
 # Code is not reloaded between requests
 config.cache_classes = true
 
+
 # Use a different logger for distributed setups
 # config.logger = SyslogLogger.new
 
@@ -19,3 +20,4 @@ config.action_controller.perform_caching             = true
 
 # Uncomment the line below if you want to use the gateway in test mode while deployed in production
 #ActiveMerchant::Billing::Base.gateway_mode = :test
+
