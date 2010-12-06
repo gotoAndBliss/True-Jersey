@@ -34,7 +34,7 @@ p.help-text {
 
 
 body {
-  background-color: #162F54;
+  background: url("/images/admin-bg.png") repeat scroll 0 0; 
   color: #476D9B; }
   a {
     color: #4884BD; }
@@ -129,12 +129,15 @@ body {
             color: #fff; }
   h1.logo {
     float: left;
-    margin: 20px 10px 10px 10px;   }
+    height: 42px;
+    width: 324px;
+    margin: 10px 0 25px 20px;
+    }
     h1.logo a {
-      background: url(../../images/admin/bg/spree_50.png) left center no-repeat;
+      background: url(../../images/true-jersey-logo.png) left center no-repeat;
       padding-left: 120px;
       display: block;
-      height: 50px;
+      height: 60px;
       text-decoration: none;
       line-height: 50px;
       color: #BBDAFD; }
