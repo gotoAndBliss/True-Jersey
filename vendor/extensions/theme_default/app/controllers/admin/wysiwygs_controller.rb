@@ -9,6 +9,14 @@ class Admin::WysiwygsController < Admin::BaseController
       @wysiwyg = Wysiwyg.new(:name => params[:name])
     end
   end
+  
+  def show
+    @img = Image.find(params[:hidden_field][:value])
+    @img.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_image_rotator_path }
+    end
+  end
 
   def edit
     @wysiwyg = Wysiwyg.find(params[:id])
@@ -37,6 +45,16 @@ class Admin::WysiwygsController < Admin::BaseController
     @images = Image.all.select{|i|i.viewable_type == "homepage"}
     @image = Image.new
   end
+  
+  def destroy_image(image)
+    debugger
+    @img = Image.find(image)
+    @img.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_image_rotator_path }
+    end
+  end
+  
   
 end
 

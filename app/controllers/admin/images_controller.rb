@@ -48,7 +48,7 @@ class Admin::ImagesController < Admin::BaseController
 	update.before :update_before
 	destroy.before :destroy_before
   
-  destroy.response do |wants| 
+  destroy.response do |wants|
     wants.html do
 			render :text => ""
     end
@@ -92,8 +92,11 @@ class Admin::ImagesController < Admin::BaseController
     end
   end
   
-  def destroy_before 
+  def destroy_before
+    debugger
     @viewable = object.viewable
   end
+  
+
 
 end
