@@ -178,7 +178,7 @@ p img {
   height: 53px;
   float: left;
   min-width: 176px;
-  padding: 3px 0 0 18px;
+  padding: 3px 18px 0 18px;
 }
 #line_items td { width: 180px; }
 .checkout-prog-box-top {
@@ -195,7 +195,7 @@ p img {
 }
 .checkout-prog-box-middle {
   background: url('/images/prog-box-middle.png') repeat-y;
-  height: 100%;
+  height: 345px;
 }
 .checkout-prog-box-bottom {
   background: url('/images/prog-box-bottom.png') no-repeat;

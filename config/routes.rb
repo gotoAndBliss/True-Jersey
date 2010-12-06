@@ -41,7 +41,6 @@ ActionController::Routing::Routes.draw do |map|
   map.logout '/logout', :controller => 'user_sessions', :action => 'destroy'
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.admin '/admin', :controller => 'admin/overview', :action => 'index'
-
   map.resources :tax_categories
   map.resources :countries, :has_many => :states, :only => :index
   map.resources :states, :only => :index
@@ -82,7 +81,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :tax_categories
     admin.resources :configurations
     admin.image_rotator '/image_rotator', :controller => 'wysiwygs', :action => 'image_rotator'
-    admin.resources :wysiwygs
+    admin.resources :wysiwygs, :member => { :destroy_image => :post }
     admin.resources :products, :member => {:clone => :get}, :has_many => [:product_properties, :images] do |product|
       product.resources :variants
       product.resources :option_types, :member => { :select => :get, :remove => :get}, :collection => {:available => :get, :selected => :get}

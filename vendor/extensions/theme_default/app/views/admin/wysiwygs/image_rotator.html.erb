@@ -13,6 +13,11 @@
 <h5>Uploaded Files</h5>
 <%- for image in @images %>
   <%= image.attachment_file_name %>
+  
+  <%-# link_to_delete image, :url => destroy_image_admin_wysiwyg_path(image.id) %>
+  <%= link_to 'delete', :controller => "wysiwygs", :action => "destroy_image", :hidden_field => {:value =>  image.id} %>
+  
+  <br />
 <% end %>
 
 

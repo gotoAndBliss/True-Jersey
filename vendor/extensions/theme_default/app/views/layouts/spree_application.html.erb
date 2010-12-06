@@ -17,8 +17,11 @@ end
 <body class="<%= @body_class %>"<%= %( id="#{@body_id}") if @body_id %>>
   <div id="header" class="container">
     <div id="header-wrapper">                                                        
-    	<%= logo %>
-      <div id="login-bar">          
+      <div class="logo-and-search">                                                  
+      	<%= logo %>
+      	<%= render 'shared/search' %>
+    	</div>
+      <div id="login-bar">       
         <ul id="nav-bar">
           <%= render 'shared/nav_bar' %>
         </ul>

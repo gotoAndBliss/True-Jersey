@@ -33,14 +33,6 @@
   margin-right: 25px;
   border-right: 1px solid #eeeeee;
 }
-.flash {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  font-size: 1.3em;
-  margin-bottom: 1em;
-  padding: 0.8em;
-}
 .formError {
   font-size: 1.3em;
   margin-bottom: 1em;
