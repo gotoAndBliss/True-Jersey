@@ -49,8 +49,11 @@ end
       <div id="content-sans-bg">
         <%-# breadcrumbs(@taxon) if @taxon %>
         <% if flash[:notice] %>
-        <div class="flash notice"><%= flash[:notice] %></div>
+        <div class="taxon-left"></div>
+        <div class="taxon-middle"><h1 style="color: #fff;"><%= flash[:notice] %></h1></div>
+        <div class="taxon-right"></div>
         <% end %>
+        <div class="clear"></div>
         <% if flash[:error] %>
         <div class="flash errors"><%= flash[:error] %></div>
         <% end %>
