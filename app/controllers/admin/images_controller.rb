@@ -5,6 +5,32 @@ class Admin::ImagesController < Admin::BaseController
 	new_action.response do |wants|
     wants.html {render :action => :new, :layout => false}
   end
+  
+  def create
+    object = Image.new(params[:image])
+    if params[:image].has_key? :viewable_id
+  		if params[:image][:viewable_id] == "All"
+  			object.viewable_type = 'Product'
+  			object.viewable_id = @product.id
+  		else
+  			object.viewable_type = 'Variant'
+  			object.viewable_id = params[:image][:viewable_id]
+  		end
+  	else
+  	  if params[:image][:viewable_type] == "homepage"
+      else
+  			object.viewable_type = 'Product'
+  			object.viewable_id = @product.id
+  		end
+  	end
+  	if object.save
+  	  if @product == nil
+  	    redirect_to admin_image_rotator_path
+	    else
+      	redirect_to admin_product_images_url(@product)
+      end
+    end
+  end
 
 	create.response do |wants|
 	  if @product == nil
@@ -18,7 +44,7 @@ class Admin::ImagesController < Admin::BaseController
 		wants.html {redirect_to admin_product_images_url(@product)}
   end
 	
-	create.before :create_before
+	#create.before :create_before
 	update.before :update_before
 	destroy.before :destroy_before
   

@@ -17,6 +17,9 @@ gem 'state_machine',  '0.8.0', :require => 'state_machine'
 gem "faker",  '0.3.1'
 gem 'paperclip',  '>=2.3.1.1'
 gem 'ruby-openid', '2.1.8', :require => 'openid'
+gem 'ruby-debug'
+gem 'ruby-debug-base'
+gem 'rmagick'
 
 gem 'haml'
 
