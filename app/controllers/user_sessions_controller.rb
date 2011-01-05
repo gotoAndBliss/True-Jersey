@@ -24,7 +24,7 @@ class UserSessionsController < Spree::BaseController
   def destroy
     current_user_session.destroy
     flash[:notice] = t("logged_out")
-    redirect_to products_path
+    redirect_to root_url
   end
   
   def nav_bar
@@ -49,7 +49,7 @@ class UserSessionsController < Spree::BaseController
         respond_to do |format|
           format.html {
             flash[:notice] = t("logged_in_succesfully") unless session[:return_to]
-            redirect_back_or_default products_path
+            redirect_back_or_default root_url
           }
           format.js {
             user = @user_session.record
@@ -66,7 +66,7 @@ class UserSessionsController < Spree::BaseController
         end
       end
     end
-    redirect_back_or_default(products_path) unless performed?
+    redirect_back_or_default(root_url) unless performed?
   end
   
   def create_user(data)
@@ -75,7 +75,7 @@ class UserSessionsController < Spree::BaseController
     @user.save do |result|
       if result
         flash[:notice] = t(:user_created_successfully) unless session[:return_to]
-        redirect_back_or_default products_url
+        redirect_back_or_default root_url
       else
         flash[:notice] = t(:missing_required_information)
         redirect_to :controller => :users, :action => :new, :user => {:openid_identifier => @user.openid_identifier}

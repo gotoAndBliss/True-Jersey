@@ -93,7 +93,6 @@ class Admin::ImagesController < Admin::BaseController
   end
   
   def destroy_before
-    debugger
     @viewable = object.viewable
   end
   

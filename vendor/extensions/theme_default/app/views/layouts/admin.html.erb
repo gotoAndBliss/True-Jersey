@@ -4,6 +4,7 @@
 <head>
   <% hook :admin_inside_head do %>
   	<%= render :partial => "shared/admin_head" %>
+  	<%= javascript_include_tag :ckeditor %>
 	<% end %>
 </head>
 <body class='yui-skin-sam admin'>

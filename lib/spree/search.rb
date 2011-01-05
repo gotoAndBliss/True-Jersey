@@ -28,11 +28,7 @@ module Spree::Search
     base_scope = Spree::Config[:allow_backorders] ? Product.active : Product.active.on_hand
     @products_scope = @product_group.apply_on(base_scope)
 
-    @products = @products_scope.paginate({
-        :include  => [:images, :master],
-        :per_page => per_page,
-        :page     => curr_page
-      })
+    @products = @products_scope
     @products_count = @products_scope.count
 
     return(@products)
