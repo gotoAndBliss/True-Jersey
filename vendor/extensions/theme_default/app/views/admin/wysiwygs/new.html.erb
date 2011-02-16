@@ -7,6 +7,10 @@
     <h2>FAQ</h2>
   <%- elsif @wysiwyg.name == "about" %>
     <h2>About</h2>
+  <%- elsif @wysiwyg.name == "shipping" %>
+    <h2>Shipping Prices</h2>
+  <%- elsif @wysiwyg.name == "size" %>
+    <h2>Sizes</h2>
   <%- elsif @wysiwyg.name.match(/box/)%>
     <h2><%= @wysiwyg.name %></h2>
   <% end %>

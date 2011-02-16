@@ -5,12 +5,20 @@
       <div id="methods">
         
         <p class="field radios">
-        <% @available_methods.each do |shipping_method| %>
-          <label>
-            <%= radio_button(:checkout, :shipping_method_id, shipping_method[:id]) %>
-            <%= shipping_method[:name] %> <%= shipping_method[:rate] %>
-          </label><br />
-        <% end %>
+          <%- if @order.item_total < 75 %>
+            <% @available_methods.each do |shipping_method| %>
+              <label>
+                <%= radio_button(:checkout, :shipping_method_id, shipping_method[:id]) %>
+                <%= shipping_method[:name] %> <%= shipping_method[:rate] %>
+              </label><br />
+            <% end %>
+          <% end %>
+          <%- if @order.item_total > 74  %>
+            <label>
+              <%= radio_button(:checkout, :shipping_method_id, @free_shipping) %>
+              <%= @free_shipping.name %>
+            </label><br />
+          <% end%>
         </p>
         
       </div>

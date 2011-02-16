@@ -1,5 +1,6 @@
 <title><%= title %></title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="google-site-verification" content="73RW_7yRS_qp0jFFGy2dsYudC_0HXdigDuaIG7aMLQo" />
 <link rel="shortcut icon" href="/images/favicon.png" />
 <%= stylesheet_tags %>
 <!--[if IE ]><%= stylesheet_link_tag "ie-sucks.css" %><![endif]-->
@@ -10,3 +11,17 @@
 <link href='http://fonts.googleapis.com/css?family=IM+Fell+Great+Primer&subset=latin' rel='stylesheet' type='text/css'>
 <%= meta_data_tags %> 
 <%= yield :head %>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20999784-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>

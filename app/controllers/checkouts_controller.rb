@@ -132,8 +132,9 @@ class CheckoutsController < Spree::BaseController
   end
 
   def load_available_methods
-    @available_methods = rate_hash
+    @available_methods = rate_hash.reject{|obj|obj.to_a.first[1] == "$0.00"}
     @checkout.shipping_method_id ||= @available_methods.first[:id]
+    @free_shipping = ShippingMethod.all.select{|sm|sm::calculator.preferred_amount.to_s == "0.0" unless sm::calculator.methods.grep(/preferred_amount/).blank? }.first
   end
 
   def load_available_integrations

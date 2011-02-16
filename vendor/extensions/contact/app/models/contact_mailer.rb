@@ -1,7 +1,7 @@
 class ContactMailer < ActionMailer::Base
   def contact(contact)
-    recipients    "daniel.levine4@gmail.com"
-    from          'daniel.levine4@gmail.com'
+    recipients    "info@truejersey.com"
+    from          "info@truejersey.com"
     subject       "HOLY MOLY, you got mail!"
     body          :contact => contact
     sent_on       Time.now
